@@ -1,6 +1,8 @@
 package logger
 //so modulare everything in its own folder
-import "log"
+import (
+	"log"
+)
 //set up logging here
 //either print out panic error or information, so those two funcs here
 

@@ -15,15 +15,15 @@ type Handler struct { //handler of type strcut
 }
 
 func NewHandler(repository adapter.Interface) handlers.Interface {
-	return &Handler{
-		Repository: repository,
+	return &Handler{ //return new handler
+		Repository: repository, //repos.
 	}
 }
 
 // get func
 func (h *Handler) Get(w http.ResponseWriter, r *http.Request) {
 	if !h.Repository.Health() {
-		HttpStatus.StatusInternalServerError(w, r, errors.New("Relational database not alive"))
+		HttpStatus.StatusInternalServerError(w, r, errors.New("Relational database not alive")) //500 error
 		return
 	}
 
