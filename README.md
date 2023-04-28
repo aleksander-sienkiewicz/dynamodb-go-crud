@@ -39,46 +39,25 @@ this makes the project very modular and readable? i hope. main.go is access poin
 Heres the cli log to initialize project & build.
 
 (base) aleksandersienkiewicz@Aleksanders-MacBook-Air ~ % cd documents
-
 (base) aleksandersienkiewicz@Aleksanders-MacBook-Air documents % cd projectdev
-
 (base) aleksandersienkiewicz@Aleksanders-MacBook-Air projectdev % mkdir dynamodb-go-crud
-
 (base) aleksandersienkiewicz@Aleksanders-MacBook-Air projectdev % cd dynamodb-go-crud
-
 (base) aleksandersienkiewicz@Aleksanders-MacBook-Air dynamodb-go-crud % go mod init github.com/aleksander-sienkiewicz/dynamodb-go-crud
-
 go: creating new go.mod: module github.com/aleksander-sienkiewicz/dynamodb-go-crud
-
 go: to add module requirements and sums:
-
 go mod tidy
-
 (base) aleksandersienkiewicz@Aleksanders-MacBook-Air dynamodb-go-crud % 
-
 (base) aleksandersienkiewicz@Aleksanders-MacBook-Air dynamodb-go-crud % ls
-
 README.md	cmd		config		go.mod		go.sum		internal	utils
-
 (base) aleksandersienkiewicz@Aleksanders-MacBook-Air dynamodb-go-crud % cd cmd
-
 (base) aleksandersienkiewicz@Aleksanders-MacBook-Air cmd % ls
-
 app
-
 (base) aleksandersienkiewicz@Aleksanders-MacBook-Air cmd % cd app
-
 (base) aleksandersienkiewicz@Aleksanders-MacBook-Air app % ls
-
 main.go
-
 (base) aleksandersienkiewicz@Aleksanders-MacBook-Air app % go run main.go
-
-
 2023/04/28 10:34:26 Waiting service starting.... <nil>
-
 2023/04/28 10:34:29 Table found: products
-
 2023/04/28 10:34:29 Service running on port :8080 
 
 
