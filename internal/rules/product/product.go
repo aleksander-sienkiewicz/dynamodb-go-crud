@@ -11,6 +11,7 @@ import (
 	"github.com/aleksander-sienkiewicz/dynamodb-go-crud/internal/entities/product"
 	"github.com/aws/aws-sdk-go/aws"
 	"github.com/aws/aws-sdk-go/service/dynamodb"
+	Validation "github.com/go-ozzo/ozzo-validation/v4"
 	"github.com/go-ozzo/ozzo-validation/v4/is"
 	"github.com/google/uuid"
 )

@@ -5,9 +5,10 @@ import (
 	"errors"
 	"time"
 
+	"github.com/google/uuid"
+
 	"github.com/aleksander-sienkiewicz/dynamodb-go-crud/internal/entities"
 	"github.com/aws/aws-sdk-go/service/dynamodb"
-	"github.com/google/uuid"
 )
 
 type Product struct {

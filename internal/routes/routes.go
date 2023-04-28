@@ -3,6 +3,9 @@ package routes
 //SET UP ALL PRODUCT AND HEALTH RELATED ROUTES , also enable logger, timout, cors.
 import ( //import files from proj, and libraries
 
+	ServerConfig "github.com/aleksander-sienkiewicz/dynamodb-go-crud/config"
+	HealthHandler "github.com/aleksander-sienkiewicz/dynamodb-go-crud/internal/handlers/health"
+	ProductHandler "github.com/aleksander-sienkiewicz/dynamodb-go-crud/internal/handlers/product"
 	"github.com/aleksander-sienkiewicz/dynamodb-go-crud/internal/repository/adapter"
 	"github.com/go-chi/chi"
 	"github.com/go-chi/chi/middleware"

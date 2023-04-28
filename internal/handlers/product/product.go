@@ -6,11 +6,12 @@ import (
 	"time"
 
 	"github.com/aleksander-sienkiewicz/dynamodb-go-crud/internal/controllers/product"
-	"github.com/aleksander-sienkiewicz/dynamodb-go-crud/internal/entities/product"
+	EntityProduct "github.com/aleksander-sienkiewicz/dynamodb-go-crud/internal/entities/product"
 	"github.com/aleksander-sienkiewicz/dynamodb-go-crud/internal/handlers"
 	"github.com/aleksander-sienkiewicz/dynamodb-go-crud/internal/repository/adapter"
-	"github.com/aleksander-sienkiewicz/dynamodb-go-crud/internal/rules/product"
-	"github.com/aleksander-sienkiewicz/dynamodb-go-crud/utils/http"
+	Rules "github.com/aleksander-sienkiewicz/dynamodb-go-crud/internal/rules"
+	RulesProduct "github.com/aleksander-sienkiewicz/dynamodb-go-crud/internal/rules/product"
+	HttpStatus "github.com/aleksander-sienkiewicz/dynamodb-go-crud/utils/http"
 	"github.com/go-chi/chi"
 	"github.com/google/uuid"
 )
@@ -129,6 +130,10 @@ func (h *Handler) Options(w http.ResponseWriter, r *http.Request) {
 // when ever u use put ur getting some body from the request. when ur posting u need all data put putting or updating
 // u get a lil bit, the id and data for that id. thats whaty we wana update, needs to be validated
 func (h *Handler) getBodyAndValidate(r *http.Request, ID uuid.UUID) (*EntityProduct.Product, error) {
+	//while we get the body like a post funcor put func, we want to marshal , converted to interface then model, at
+	//same time we are validating and setting default values. doing it all in one func here.
+
+	//now we dont have to write it again for put and post
 	productBody := &EntityProduct.Product{}
 	body, err := h.Rules.ConvertIoReaderToStruct(r.Body, productBody) //defined in a file called rules
 	if err != nil {
@@ -143,15 +148,16 @@ func (h *Handler) getBodyAndValidate(r *http.Request, ID uuid.UUID) (*EntityProd
 
 	setDefaultValues(productParsed, ID)
 
+	//model->validated
 	return productParsed, h.Rules.Validate(productParsed)
 }
 
 func setDefaultValues(product *EntityProduct.Product, ID uuid.UUID) {
-	product.UpdatedAt = time.Now()
-	if ID == uuid.Nil {
-		product.ID = uuid.New()
-		product.CreatedAt = time.Now()
+	product.UpdatedAt = time.Now() //update now
+	if ID == uuid.Nil {            //if nil
+		product.ID = uuid.New()        //create new id
+		product.CreatedAt = time.Now() //created at now!
 	} else {
-		product.ID = ID
+		product.ID = ID //assign id
 	}
 }

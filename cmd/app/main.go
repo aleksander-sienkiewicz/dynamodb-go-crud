@@ -3,19 +3,17 @@ package main
 
 import (
 	"fmt"
+	"log"
+	"net/http"
 
 	"github.com/aleksander-sienkiewicz/dynamodb-go-crud/config"
 	"github.com/aleksander-sienkiewicz/dynamodb-go-crud/internal/repository/adapter"
 	"github.com/aleksander-sienkiewicz/dynamodb-go-crud/internal/repository/instance"
 	"github.com/aleksander-sienkiewicz/dynamodb-go-crud/internal/routes"
 	"github.com/aleksander-sienkiewicz/dynamodb-go-crud/internal/rules"
-	"github.com/aws/aws-sdk-go/service/dynamodb"
-
-	//"github.com/aleksander-sienkiewicz/dynamodb-go-crud/internal/rules/product"
-	"log"
-	"net/http"
-
+	RulesProduct "github.com/aleksander-sienkiewicz/dynamodb-go-crud/internal/rules/product"
 	"github.com/aleksander-sienkiewicz/dynamodb-go-crud/utils/logger"
+	"github.com/aws/aws-sdk-go/service/dynamodb"
 	//aws-sdk-go has rlly great documentation for so many dif things, dianamodb, lambda, etc.
 ) //db just a small part of the huge library aws gives
 
