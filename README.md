@@ -36,4 +36,43 @@ We will split into folders and give them all same package name under same folder
 this makes the project very modular and readable
 
 
+CLI Log -create directory & build
+
+Last login: Thu Apr 27 11:59:52 on ttys000
+(base) aleksandersienkiewicz@Aleksanders-MacBook-Air ~ % cd documents
+(base) aleksandersienkiewicz@Aleksanders-MacBook-Air documents % cd projectdev
+(base) aleksandersienkiewicz@Aleksanders-MacBook-Air projectdev % mkdir dynamodb-go-crud
+(base) aleksandersienkiewicz@Aleksanders-MacBook-Air projectdev % cd dynamodb-go-crud
+(base) aleksandersienkiewicz@Aleksanders-MacBook-Air dynamodb-go-crud % code.
+zsh: command not found: code.
+(base) aleksandersienkiewicz@Aleksanders-MacBook-Air dynamodb-go-crud % go mod init 
+go: cannot determine module path for source directory /Users/aleksandersienkiewicz/documents/projectdev/dynamodb-go-crud (outside GOPATH, module path must be specified)
+
+Example usage:
+	'go mod init example.com/m' to initialize a v0 or v1 module
+	'go mod init example.com/m/v2' to initialize a v2 module
+
+Run 'go help mod init' for more information.
+(base) aleksandersienkiewicz@Aleksanders-MacBook-Air dynamodb-go-crud % go mod init github.com/aleksander-sienkiewicz/dynamodb-go-crud
+go: creating new go.mod: module github.com/aleksander-sienkiewicz/dynamodb-go-crud
+go: to add module requirements and sums:
+	go mod tidy
+(base) aleksandersienkiewicz@Aleksanders-MacBook-Air dynamodb-go-crud % 
+(base) aleksandersienkiewicz@Aleksanders-MacBook-Air dynamodb-go-crud % ls
+README.md	cmd		config		go.mod		go.sum		internal	utils
+(base) aleksandersienkiewicz@Aleksanders-MacBook-Air dynamodb-go-crud % cd cmd
+(base) aleksandersienkiewicz@Aleksanders-MacBook-Air cmd % ls
+app
+(base) aleksandersienkiewicz@Aleksanders-MacBook-Air cmd % cd app
+(base) aleksandersienkiewicz@Aleksanders-MacBook-Air app % ls
+main.go
+(base) aleksandersienkiewicz@Aleksanders-MacBook-Air app % go run main.go
+2023/04/28 10:34:26 Waiting service starting.... <nil>
+2023/04/28 10:34:29 Table found: products
+2023/04/28 10:34:29 Service running on port :8080
+
+
+
+
+
 
