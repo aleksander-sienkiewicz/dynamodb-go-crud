@@ -5,13 +5,12 @@ import (
 	"net/http"
 	"time"
 
-	Rules "github.com/aleksander-sienkiewicz/dynamodb-go-crud-yt/internal/rules"
 	"github.com/aleksander-sienkiewicz/dynamodb-go-crud/internal/controllers/product"
-	EntityProduct "github.com/aleksander-sienkiewicz/dynamodb-go-crud/internal/entities/product"
+	"github.com/aleksander-sienkiewicz/dynamodb-go-crud/internal/entities/product"
 	"github.com/aleksander-sienkiewicz/dynamodb-go-crud/internal/handlers"
 	"github.com/aleksander-sienkiewicz/dynamodb-go-crud/internal/repository/adapter"
-	RulesProduct "github.com/aleksander-sienkiewicz/dynamodb-go-crud/internal/rules/product"
-	HttpStatus "github.com/aleksander-sienkiewicz/dynamodb-go-crud/utils/http"
+	"github.com/aleksander-sienkiewicz/dynamodb-go-crud/internal/rules/product"
+	"github.com/aleksander-sienkiewicz/dynamodb-go-crud/utils/http"
 	"github.com/go-chi/chi"
 	"github.com/google/uuid"
 )
