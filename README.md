@@ -2,7 +2,7 @@
  
 CRUD apps are the user interface that we use to interact with databases through APIs. It is a specific type of application that supports the four basic operations: Create, read, update, delete. Broadly, CRUD apps consist of the database, the user interface, and the APIs
 
-In this project we will learn to create a bulletproof crud api using GO, Dynamo DB, and CHI Router
+In this project we will learn to create a 'bulletproof' crud api using GO, Dynamo DB, and CHI Router
 
 This project is very modulare, gives us so much intel to work with for future projects 
 
